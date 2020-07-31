@@ -1,0 +1,32 @@
+PROTO sphere [
+  field SFVec3f    translation  -0.164241 0.0491782 0.13911
+  field SFRotation rotation     -0.6431595558299344 0.03412851318980442 0.7649712611151447 2.309058091292686
+  ]
+  {
+    Solid {
+      translation IS translation
+      rotation IS rotation
+      children [
+     DEF sphere_part_1 Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 1
+            roughness 0
+            metalness 1
+            baseColorMap ImageTexture{
+            url "textures/red_brick_wall.jpg"
+          }
+          }
+          geometry DEF BALL_GEOMETRY Sphere {
+          radius 0.05
+          subdivision 2
+          }
+          }
+          ]    
+          boundingObject USE BALL_GEOMETRY
+          physics Physics {
+            density 1000
+            mass -1
+          }
+          }
+  }
+          
