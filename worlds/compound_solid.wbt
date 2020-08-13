@@ -1,0 +1,269 @@
+#VRML_SIM R2020a utf8
+WorldInfo {
+  contactProperties [
+    ContactProperties {
+      coulombFriction [
+        0
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.3892208098141444 0.8607469986895023 0.32805756423932037 4.657335374334169
+  position -1.9467807075116403 1.5657142813155067 0.1051214610102797
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+WoodenBox {
+  translation 0.44099 0.05 -0.429531
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation 0.44767 0.05 0.393065
+  name "wooden box(2)"
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation -0.434302 0.05 0.435835
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+}
+E-puck {
+  hidden position_0_0 7.033599999935258
+  hidden position_0_1 8.408010052085571e-14
+  hidden linearVelocity_0 1.5221822113016898e-06 -8.215499320840522e-08 -2.3215918773773765e-06
+  hidden angularVelocity_0 0.00742817820198928 -1.4691735457747148e-05 0.004870405722461195
+  hidden rotation_1 1 0 0 0.6214205479756545
+  hidden linearVelocity_1 -2.2626496477442565e-05 -3.968591087311069e-07 3.450816341673541e-05
+  hidden angularVelocity_1 -5.250217809262144 -3.160325786072906e-05 -3.429595880358178
+  hidden rotation_2 -1 0 0 4.7103900665109775
+  hidden linearVelocity_2 -2.303896986160815e-05 3.577889771566594e-07 3.5139592904585756e-05
+  hidden angularVelocity_2 0.0074281782693225 -1.4691823859468848e-05 0.004870405617527526
+  translation -0.34665321506325875 -6.395540287226949e-05 -0.16224193323171224
+  rotation 0.0016423669767689304 0.999998534523492 0.0004833027848945166 -0.5786457478115853
+  controller "epuck_avoid_collision"
+}
+Floor {
+  size 1 1
+}
+Solid {
+  translation 0.215892 0.184288 0.0417409
+  rotation -0.6431595558299341 0.03412851318983262 0.7649712611151436 2.3090580912927097
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/red_brick_wall.jpg"
+          ]
+        }
+      }
+      geometry DEF BALL_GEOMETRY Sphere {
+        radius 0.05
+        subdivision 2
+      }
+    }
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF BALL_GEOMETRY Sphere {
+        radius 0.2
+      }
+    }
+  ]
+  name "solid(7)"
+  boundingObject USE BALL_GEOMETRY
+  physics Physics {
+    density -1
+    mass 10
+  }
+}
+Solid {
+  translation -0.4410735109225958 0.0491781593618209 -0.16864516875571103
+  rotation -0.6431595558299341 0.03412851318983262 0.7649712611151436 2.3090580912927097
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/red_brick_wall.jpg"
+          ]
+        }
+      }
+      geometry DEF BALL_GEOMETRY Sphere {
+        radius 0.05
+        subdivision 2
+      }
+    }
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF BALL_GEOMETRY Sphere {
+        radius 0.05
+        subdivision 2
+      }
+    }
+  ]
+  name "solid(6)"
+  boundingObject USE BALL_GEOMETRY
+  physics Physics {
+  }
+  linearVelocity 0 5.4281466563644013e-17 0
+}
+Solid {
+  translation -0.226804 0.0421533549966177 0.0379097
+  rotation -0.6755023066098486 0.7280940487549629 0.11651476272292685 2.929456081001916
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/red_brick_wall.jpg"
+          ]
+        }
+      }
+      geometry DEF BALL_GEOMETRY Sphere {
+        radius 0.1
+        subdivision 2
+      }
+    }
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF BALL_GEOMETRY Sphere {
+        radius 0.05
+        subdivision 2
+      }
+    }
+  ]
+  boundingObject USE BALL_GEOMETRY
+  physics Physics {
+    density -1
+    mass 5
+  }
+  linearVelocity 0 -1.1160429002070836e-05 0
+}
+Solid {
+  translation 0.544756 0.0439675 -0.00298913
+  rotation 0 1 0 -1.5707953071795862
+  scale 0.95 0.95 0.95
+  children [
+    DEF wall_geometry Shape {
+      appearance PBRAppearance {
+        baseColor 0.12549 0.290196 0.529412
+        roughness 0.5
+        metalness 0
+      }
+      geometry DEF GEOMETRY_BOX Box {
+        size 1.05 0.1 0.1
+      }
+    }
+  ]
+  name "solid(4)"
+  boundingObject DEF GEOMETRY_BOX Box {
+    size 1.05 0.1 0.1
+  }
+}
+Solid {
+  translation 0.0116645 0.0439675 0.547092
+  scale 0.95 0.95 0.95
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF GEOMETRY_BOX Box {
+        size 1.05 0.1 0.1
+      }
+    }
+    USE wall_geometry
+  ]
+  name "solid(3)"
+  boundingObject DEF GEOMETRY_BOX Box {
+    size 1.05 0.1 0.1
+  }
+}
+Solid {
+  translation 0.006850802739052653 0.04396770394891048 -0.5521438143432778
+  rotation -4.480235104000095e-08 0.999999999999999 -6.053125566473115e-10 -4.407661069568589e-06
+  scale 0.95 0.95 0.95
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF GEOMETRY_BOX Box {
+        size 1.05 0.1 0.1
+      }
+    }
+    USE wall_geometry
+  ]
+  name "solid(1)"
+  boundingObject USE GEOMETRY_BOX
+}
+Solid {
+  translation -0.547047 0.0439675 0.00369116
+  rotation 0 1 0 -1.5707953071795862
+  scale 0.95 0.95 0.95
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF GEOMETRY_BOX Box {
+        size 1.05 0.1 0.1
+      }
+    }
+    USE wall_geometry
+  ]
+  name "solid(2)"
+  boundingObject DEF GEOMETRY_BOX Box {
+    size 1.05 0.1 0.1
+  }
+}
+Solid {
+  translation -0.367799 0.0284304 0.265176
+  rotation 1 0 0 1.5770747680430715
+  children [
+    DEF Go Group {
+      children [
+        Transform {
+          translation 0 0.05 0
+          children [
+            Shape {
+              geometry Sphere {
+                radius 0.03
+                subdivision 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 -0.05 0
+          children [
+            Shape {
+              geometry Sphere {
+                radius 0.03
+                subdivision 2
+              }
+            }
+          ]
+        }
+        Shape {
+          geometry Cylinder {
+            height 0.1
+            radius 0.01
+          }
+        }
+      ]
+    }
+  ]
+  name "solid(5)"
+  contactMaterial "dumbbell"
+  boundingObject USE Go
+  physics Physics {
+    mass 2
+    centerOfMass [
+      0 0.01 0
+    ]
+  }
+}
